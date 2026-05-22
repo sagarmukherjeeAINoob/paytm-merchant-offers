@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paytm for Business — Merchant Offer Portal</title>
+<meta name="description" content="Download No-Cost EMI offer manuals for May 2026. OnePlus, Xiaomi and more.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #002970;
+  --sky:     #00baf2;
+  --blue:    #0052cc;
+  --green:   #16a34a;
+  --red:     #e53e3e;
+  --orange:  #ff6900;
+  --charcoal:#2d3748;
+  --muted:   #64748b;
+  --border:  #e2e8f0;
+  --surface: #f7fafc;
+  --white:   #ffffff;
+  --bg:      #f0f4f8;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--charcoal);
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background: var(--navy);
+  padding: 0 40px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,.25);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo .logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.nav-logo .logo-text .pay { color: white; }
+.nav-logo .logo-text .t   { color: var(--sky); }
+.nav-logo .logo-text .m   { color: white; }
+.nav-logo .logo-sep {
+  width: 1px; height: 28px;
+  background: rgba(255,255,255,.2);
+}
+.nav-logo .logo-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+  letter-spacing: 0.5px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--sky);
+  background: rgba(0,186,242,.12);
+  border: 1px solid rgba(0,186,242,.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+}
+.nav-month {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.55);
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #004bb5 55%, #0070d8 100%);
+  padding: 56px 40px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(0,186,242,.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(0,186,242,.1) 0%, transparent 60%);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 16px;
+  background: rgba(0,186,242,.1);
+  border: 1px solid rgba(0,186,242,.25);
+  border-radius: 20px;
+  padding: 5px 16px;
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--sky); }
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.65);
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ── SEARCH BAR ── */
+.search-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-bar {
+  width: 100%;
+  padding: 16px 56px 16px 52px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.97);
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--charcoal);
+  outline: none;
+  box-shadow: 0 8px 40px rgba(0,0,0,.25);
+  transition: border .2s, box-shadow .2s;
+}
+.search-bar::placeholder { color: var(--muted); }
+.search-bar:focus {
+  border-color: var(--sky);
+  box-shadow: 0 8px 40px rgba(0,0,0,.3), 0 0 0 4px rgba(0,186,242,.15);
+}
+.search-icon {
+  position: absolute;
+  left: 18px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 18px;
+  pointer-events: none;
+}
+.search-clear {
+  position: absolute;
+  right: 18px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none;
+  color: var(--muted); font-size: 18px;
+  cursor: pointer; display: none;
+  padding: 4px;
+  line-height: 1;
+}
+.search-clear:hover { color: var(--charcoal); }
+.search-hint {
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+}
+.search-hint kbd {
+  background: rgba(255,255,255,.12);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+}
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.stat-item strong { color: var(--charcoal); font-weight: 700; }
+.stat-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--sky);
+}
+.filter-chips {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+.filter-chip {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+}
+.filter-chip:hover, .filter-chip.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* ── SEARCH RESULTS HEADER ── */
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.results-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+}
+.results-count {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.no-results {
+  text-align: center;
+  padding: 80px 40px;
+  display: none;
+}
+.no-results-icon { font-size: 48px; margin-bottom: 16px; }
+.no-results h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.no-results p { font-size: 14px; color: var(--muted); }
+
+/* ── BRAND GRID ── */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* ── BRAND CARD ── */
+.brand-card {
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.brand-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+  border-color: var(--sky);
+}
+
+.card-header {
+  padding: 20px 22px 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-brand-info { flex: 1; }
+.card-brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.card-brand-category {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.card-logo-zone {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 22px 16px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.chip-month { background: rgba(0,186,242,.08); color: #0077aa; border-color: rgba(0,186,242,.3); }
+.chip-offer { background: rgba(0,82,204,.08); color: var(--blue); border-color: rgba(0,82,204,.25); }
+.chip-bank  { background: rgba(0,41,112,.06); color: var(--navy); border-color: rgba(0,41,112,.2); }
+.chip-cat   { background: rgba(22,163,74,.08); color: var(--green); border-color: rgba(22,163,74,.25); }
+.chip-warn  { background: rgba(217,119,6,.08); color: #b45309; border-color: rgba(217,119,6,.3); }
+
+.card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  margin: 0 22px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.card-stat {
+  background: var(--surface);
+  padding: 12px 14px;
+}
+.card-stat-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.card-stat-value {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -0.3px;
+}
+.card-stat-value.green { color: var(--green); }
+
+.card-skus {
+  padding: 0 22px 16px;
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding: 16px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-download {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  background: var(--navy);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .15s, transform .1s;
+}
+.btn-download:hover { background: #003a9e; transform: translateY(-1px); }
+.btn-download:active { transform: translateY(0); }
+.btn-preview {
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: all .15s;
+}
+.btn-preview:hover {
+  background: white;
+  border-color: var(--sky);
+  color: var(--navy);
+}
+
+/* ── SEARCH RESULT ROWS (shown when searching) ── */
+.sku-results { display: none; }
+.sku-results.visible { display: block; }
+.brand-grid.hidden { display: none; }
+
+.sku-table-wrap {
+  background: white;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.sku-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.sku-table thead tr { background: var(--navy); }
+.sku-table thead th {
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: white;
+  text-align: left;
+}
+.sku-table tbody tr { border-bottom: 1px solid var(--border); transition: background .1s; }
+.sku-table tbody tr:last-child { border-bottom: none; }
+.sku-table tbody tr:hover { background: var(--surface); }
+.sku-table td { padding: 12px 16px; vertical-align: middle; }
+.sku-brand { font-weight: 700; color: var(--navy); }
+.sku-product { font-size: 12px; color: var(--charcoal); }
+.sku-code { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+.sku-cashback { font-weight: 800; color: var(--blue); font-size: 14px; }
+.sku-chip {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(0,82,204,.08); color: var(--blue);
+  border: 1px solid rgba(0,82,204,.2);
+}
+.sku-dl-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 6px;
+  background: var(--navy); color: white;
+  font-size: 12px; font-weight: 600;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: background .15s;
+}
+.sku-dl-btn:hover { background: #003a9e; }
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,.55);
+  text-align: center;
+  padding: 28px 40px;
+  font-size: 12px;
+  margin-top: 60px;
+}
+.site-footer strong { color: white; }
+
+/* ── HIGHLIGHT ── */
+mark { background: rgba(0,186,242,.25); color: inherit; border-radius: 2px; padding: 0 2px; }
+
+/* ── SKELETON / LOADING ── */
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <div class="logo-text">
+      <span class="pay">Pay</span><span class="t">t</span><span class="m">m</span>
+    </div>
+    <div class="logo-sep"></div>
+    <div class="logo-sub">for Business &nbsp;·&nbsp; Merchant Portal</div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-badge">🏪 Offer Hub</span>
+    <span class="nav-month">May 2026</span>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">No-Cost EMI & Cashback Offer Manuals</div>
+    <h1>Find Your <span>Brand Offer</span><br>Download Instantly</h1>
+    <p class="hero-sub">Search by brand, product name or SKU to find the right EMI scheme manual for your store.</p>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-bar" id="searchInput"
+        placeholder="Search brand, product name or SKU number…"
+        autocomplete="off" spellcheck="false" />
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+      <div class="search-hint">Try <kbd>OnePlus 13</kbd> or <kbd>5011111620</kbd> or <kbd>Redmi Pad</kbd></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-dot"></span><strong>2</strong> Brands</div>
+  <div class="stat-item"><span class="stat-dot"></span><strong>296+</strong> SKUs</div>
+  <div class="stat-item"><span class="stat-dot"></span><strong>3</strong> Bank Partners</div>
+  <div class="stat-item"><span class="stat-dot"></span><strong>May 2026</strong> Active Campaign</div>
+  <div class="filter-chips">
+    <button class="filter-chip active" onclick="filterCards('all', this)">All Brands</button>
+    <button class="filter-chip" onclick="filterCards('mobile', this)">📱 Mobile</button>
+    <button class="filter-chip" onclick="filterCards('tablet', this)">📟 Tablets</button>
+    <button class="filter-chip" onclick="filterCards('tv', this)">📺 TV</button>
+  </div>
+</div>
+
+
+<!-- ── DRIVE NOTICE ── -->
+<div style="background:linear-gradient(90deg,#002970 0%,#004bb5 100%);padding:10px 40px;display:flex;align-items:center;gap:14px;font-size:12.5px;color:rgba(255,255,255,.85);">
+  <span style="font-size:18px;">📁</span>
+  <span>All manuals are stored in <strong style="color:#00baf2;">Google Drive</strong>. Click <strong style="color:white;">Download Manual</strong> or <strong style="color:white;">View</strong> to open the shared folder, then download the file for your brand.</span>
+  <a href="https://github.com/sagarmukherjeeainoob/paytm-merchant-offers" target="_blank" style="margin-left:auto;flex-shrink:0;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:white;font-weight:700;font-size:12px;padding:6px 16px;border-radius:6px;text-decoration:none;white-space:nowrap;">Open Folder ↗</a>
+</div>
+
+<!-- ── MAIN ── -->
+<main class="main">
+  <div class="results-header">
+    <div>
+      <div class="results-title" id="resultsTitle">Current Offers</div>
+      <div class="results-count" id="resultsCount">Showing all 2 brand manuals for May 2026</div>
+    </div>
+  </div>
+
+  <!-- No Results -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>No matches found</h3>
+    <p>Try searching for a brand name like "OnePlus" or "Xiaomi", or a SKU like "5011111620"</p>
+  </div>
+
+  <!-- SKU Search Results Table -->
+  <div class="sku-results" id="skuResults">
+    <div class="sku-table-wrap">
+      <table class="sku-table">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Product / SKU</th>
+            <th>Category</th>
+            <th>Price Range</th>
+            <th>EMI Cashback</th>
+            <th>Bank · Card</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody id="skuTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Brand Cards Grid -->
+  <div class="brand-grid" id="brandGrid">
+
+    <!-- ── ONEPLUS CARD ── -->
+    <div class="brand-card" data-brand="oneplus" data-cats="mobile tablet">
+      <div class="card-header">
+        <div class="card-brand-info">
+          <div class="card-brand-name" style="color:#e53e3e;">OnePlus</div>
+          <div class="card-brand-category">Mobiles &amp; IOT Portfolio</div>
+        </div>
+        <div class="card-logo-zone" style="background:rgba(229,62,62,.08);">📱</div>
+      </div>
+
+      <div class="card-chips">
+        <span class="chip chip-month">📅 May 2026</span>
+        <span class="chip chip-offer">💰 Up to ₹5,000 EMI CB</span>
+        <span class="chip chip-offer">💸 Up to ₹3,000 Fullswipe</span>
+        <span class="chip chip-bank">🏦 HDFC · YES · IndusInd</span>
+        <span class="chip chip-cat">📱 Mobile</span>
+        <span class="chip chip-cat">📟 Tablets</span>
+        <span class="chip chip-warn">⚡ 1 Txn/Card/Month</span>
+      </div>
+
+      <div class="card-stats">
+        <div class="card-stat">
+          <div class="card-stat-label">Max EMI Cashback</div>
+          <div class="card-stat-value">₹5,000</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Max Fullswipe</div>
+          <div class="card-stat-value">₹3,000</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Models Covered</div>
+          <div class="card-stat-value green">8 Models</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Tenure Options</div>
+          <div class="card-stat-value green">6–24 Mo.</div>
+        </div>
+      </div>
+
+      <div class="card-skus" id="opSkuPreview">
+        SKUs: 5011111620, 5011110320, 5011110321, 5011111409, 5011110318, 5011111414, 5011111067, 5011111066, 5511100978, 5511100975…
+      </div>
+
+      <div class="card-footer">
+        <a href="https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html" target="_blank" class="btn-download" id="op-dl" download="OnePlus_May2026_NoCostEMIOffers.html">
+          ⬇ Download Manual
+        </a>
+        <a href="https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html" target="_blank" class="btn-preview">↗ View</a>
+      </div>
+    </div>
+
+    <!-- ── XIAOMI CARD ── -->
+    <div class="brand-card" data-brand="xiaomi" data-cats="mobile tablet tv">
+      <div class="card-header">
+        <div class="card-brand-info">
+          <div class="card-brand-name" style="color:#ff6900;">Xiaomi</div>
+          <div class="card-brand-category">Phones, Tablets &amp; Smart TVs</div>
+        </div>
+        <div class="card-logo-zone" style="background:rgba(255,105,0,.08);">📺</div>
+      </div>
+
+      <div class="card-chips">
+        <span class="chip chip-month">📅 May 2026</span>
+        <span class="chip chip-offer">💰 NC EMI Available</span>
+        <span class="chip chip-bank">🏦 As per CBD</span>
+        <span class="chip chip-cat">📱 Phone</span>
+        <span class="chip chip-cat">📟 Tablets</span>
+        <span class="chip chip-cat">📺 TV</span>
+        <span class="chip chip-warn">⚡ 1 Txn/Card/Category</span>
+        <span class="chip chip-warn">⏰ Some: 1–4 May only</span>
+      </div>
+
+      <div class="card-stats">
+        <div class="card-stat">
+          <div class="card-stat-label">Scheme Type</div>
+          <div class="card-stat-value">NC / LC EMI</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Instruments</div>
+          <div class="card-stat-value">CC &amp; DC</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Models Covered</div>
+          <div class="card-stat-value green">159+ SKUs</div>
+        </div>
+        <div class="card-stat">
+          <div class="card-stat-label">Tenure Options</div>
+          <div class="card-stat-value green">3–12 Mo.</div>
+        </div>
+      </div>
+
+      <div class="card-skus">
+        SKUs: 57579, 57581, 57584, 57582, 57583, 57580, 60290, 60293, 60294, 60295, 62844, 61325, 62842, 62845…
+      </div>
+
+      <div class="card-footer">
+        <a href="https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html" target="_blank" class="btn-download" id="xi-dl" download="Xiaomi_May2026_NoCostEMIOffers.html">
+          ⬇ Download Manual
+        </a>
+        <a href="https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html" target="_blank" class="btn-preview">↗ View</a>
+      </div>
+    </div>
+
+  </div><!-- /brand-grid -->
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <strong>Paytm for Business</strong> — Merchant Offer Portal &nbsp;·&nbsp; May 2026 Campaign &nbsp;·&nbsp; Confidential — For Internal Use Only
+</footer>
+
+<script>
+// ── SKU / PRODUCT DATABASE ──
+const DB = [
+  // ── OnePlus Mobile ──
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13',product:'OnePlus 13 CPH2649 1TB 24GB Black Eclipse',sku:'5011111620',pid:'603352726',min:74990,max:89999,emi_cb:5000,fs_cb:3000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13',product:'OnePlus 13 CPH2649 256GB 12GB Arctic Dawn',sku:'5011110320',pid:'603352722',min:57990,max:69999,emi_cb:5000,fs_cb:3000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13',product:'OnePlus 13 CPH2649 256GB 12GB Black Eclipse',sku:'5011111409',pid:'603352719',min:57990,max:69999,emi_cb:5000,fs_cb:3000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13 R',product:'OnePlus 13R CPH2691 256GB 12GB Nebula Noir',sku:'5011111067',pid:'603352718',min:37990,max:42999,emi_cb:2000,fs_cb:1000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13 R',product:'OnePlus 13R CPH2691 256GB 12GB Astral Trail',sku:'5011111066',pid:'603352725',min:37990,max:42999,emi_cb:2000,fs_cb:1000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13s',product:'OnePlus 13s CPH2723 256GB 12GB Black Velvet',sku:'5011112672',pid:'635855135',min:47990,max:54999,emi_cb:3000,fs_cb:2000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 15',product:'OnePlus 15 CPH2745 256GB 12GB Infinite Black',sku:'5011116576',pid:'653416738',min:72990,max:77999,emi_cb:3000,fs_cb:1000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 15R',product:'OnePlus 15R CPH2767 512GB 12GB Charcoal Black',sku:'5011118352',pid:'653422112',min:54990,max:59999,emi_cb:2000,fs_cb:1000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 15R',product:'OnePlus 15R CPH2767 256GB 12GB Mint Breeze',sku:'5011118355',pid:'653422113',min:49990,max:54999,emi_cb:2000,fs_cb:1000,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus Nord 5',product:'OnePlus Nord 5 CPH2707 256GB 12GB Dry Ice',sku:'5011113184',pid:'642255658',min:33990,max:36999,emi_cb:1000,fs_cb:0,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13',product:'OnePlus 13 CPH2649 1TB 24GB Black Eclipse',sku:'5011111620',pid:'603352726',min:74990,max:89999,emi_cb:5000,fs_cb:0,bank:'YES CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Mobile',model:'OnePlus 13',product:'OnePlus 13 CPH2649 1TB 24GB Black Eclipse',sku:'5011111620',pid:'603352726',min:74990,max:89999,emi_cb:5000,fs_cb:0,bank:'INDS CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  // ── OnePlus Tablets ──
+  {brand:'OnePlus',cat:'Tablets',model:'OnePlus Pad Go 2',product:'OnePlus Pad Go 2 256GB 8GB Shadow Black 5G',sku:'5511100978',pid:'653422107',min:17990,max:33999,emi_cb:2000,fs_cb:0,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Tablets',model:'OnePlus Pad Go 2',product:'OnePlus Pad Go 2 256GB 8GB Shadow Black WIFI',sku:'5511100975',pid:'653422106',min:17990,max:30999,emi_cb:2000,fs_cb:0,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Tablets',model:'OnePlus Pad Lite',product:'OnePlus Pad Lite 128GB 6GB Aero Blue WIFI',sku:'5511100595',pid:'645343537',min:12990,max:17999,emi_cb:2000,fs_cb:0,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  {brand:'OnePlus',cat:'Tablets',model:'OnePlus Pad Lite',product:'OnePlus Pad Lite 128GB 8GB Aero Blue LTE',sku:'5511100594',pid:'645343538',min:12990,max:19999,emi_cb:2000,fs_cb:0,bank:'HDFC CC',tenure:'6,9,12,18,24',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/OnePlus_May26_Paytm_Scheme_Manual.html'},
+  // ── Xiaomi ──
+  {brand:'Xiaomi',cat:'Tablets',model:'Redmi Pad Pro',product:'Redmi Pad Pro | 6GB+128GB | Graphite Grey',sku:'57579',pid:'544400358',min:17999,max:21999,emi_cb:0,fs_cb:0,bank:'As per CBD',tenure:'3 NC',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html'},
+  {brand:'Xiaomi',cat:'Tablets',model:'Redmi Pad Pro 5G',product:'Redmi Pad Pro 5G | 8GB+128GB | Grey',sku:'57584',pid:'544400359',min:20999,max:24999,emi_cb:0,fs_cb:0,bank:'As per CBD',tenure:'3 NC',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html'},
+  {brand:'Xiaomi',cat:'Tablets',model:'Xiaomi Pad 7',product:'Xiaomi Pad 7 | 8GB+128GB | Mirage Purple',sku:'62844',pid:'604055409',min:25999,max:28999,emi_cb:0,fs_cb:0,bank:'As per CBD',tenure:'3,6 NC',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html'},
+  {brand:'Xiaomi',cat:'Phone',model:'Redmi Note 14 Pro+',product:'Redmi Note 14 Pro+ 5G | 8GB+256GB | Black',sku:'63100',pid:'607455100',min:27999,max:32999,emi_cb:0,fs_cb:0,bank:'As per CBD',tenure:'3,6,9,12 NC',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html'},
+  {brand:'Xiaomi',cat:'TV',model:'Xiaomi TV S65',product:'Xiaomi Smart TV S65 | 65" | 4K QLED',sku:'55100',pid:'601234001',min:54999,max:69999,emi_cb:0,fs_cb:0,bank:'As per CBD',tenure:'3,6 NC + 9,12 LC',file:'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers/Xiaomi_May26_Paytm_Scheme_Manual.html'},
+];
+
+const searchInput = document.getElementById('searchInput');
+const searchClear = document.getElementById('searchClear');
+const brandGrid   = document.getElementById('brandGrid');
+const skuResults  = document.getElementById('skuResults');
+const skuBody     = document.getElementById('skuTableBody');
+const noResults   = document.getElementById('noResults');
+const resultsTitle= document.getElementById('resultsTitle');
+const resultsCount= document.getElementById('resultsCount');
+
+function hl(text, q) {
+  if (!q) return text;
+  const re = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+  return String(text).replace(re, '<mark>$1</mark>');
+}
+
+function fmt(n) {
+  if (!n) return '—';
+  return '₹' + Number(n).toLocaleString('en-IN');
+}
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim();
+  searchClear.style.display = q ? 'block' : 'none';
+  if (!q) { showCards(); return; }
+  doSearch(q);
+});
+
+function clearSearch() {
+  searchInput.value = '';
+  searchClear.style.display = 'none';
+  showCards();
+}
+
+function showCards() {
+  brandGrid.classList.remove('hidden');
+  skuResults.classList.remove('visible');
+  noResults.style.display = 'none';
+  resultsTitle.textContent = 'Current Offers';
+  resultsCount.textContent = 'Showing all 2 brand manuals for May 2026';
+}
+
+function doSearch(q) {
+  const ql = q.toLowerCase();
+  const matches = DB.filter(r =>
+    r.brand.toLowerCase().includes(ql) ||
+    r.model.toLowerCase().includes(ql) ||
+    r.product.toLowerCase().includes(ql) ||
+    r.sku.toLowerCase().includes(ql) ||
+    r.pid.toLowerCase().includes(ql) ||
+    r.cat.toLowerCase().includes(ql)
+  );
+
+  brandGrid.classList.add('hidden');
+  noResults.style.display = 'none';
+
+  if (matches.length === 0) {
+    skuResults.classList.remove('visible');
+    noResults.style.display = 'block';
+    resultsTitle.textContent = 'No results';
+    resultsCount.textContent = `No matches found for "${q}"`;
+    return;
+  }
+
+  // Deduplicate by sku+bank
+  const seen = new Set();
+  const unique = matches.filter(r => {
+    const k = r.sku + r.bank;
+    if (seen.has(k)) return false;
+    seen.add(k); return true;
+  });
+
+  skuBody.innerHTML = unique.map(r => `
+    <tr>
+      <td><span class="sku-brand">${hl(r.brand, q)}</span></td>
+      <td>
+        <div class="sku-product">${hl(r.model, q)}</div>
+        <div class="sku-product" style="color:var(--muted);font-size:11px;">${hl(r.product, q)}</div>
+        <div class="sku-code">SKU: ${hl(r.sku, q)} &nbsp;|&nbsp; PID: ${hl(r.pid, q)}</div>
+      </td>
+      <td><span class="chip chip-cat" style="font-size:10px;">${r.cat}</span></td>
+      <td style="font-size:12px;">${fmt(r.min)}<br><span style="color:var(--muted);font-size:10px;">to</span><br>${fmt(r.max)}</td>
+      <td>${r.emi_cb ? `<span class="sku-cashback">${fmt(r.emi_cb)}</span>` : '<span style="color:var(--muted);font-size:11px;">As per CBD</span>'}</td>
+      <td><span class="sku-chip">${r.bank}</span><br><span style="font-size:10px;color:var(--muted);">${r.tenure}</span></td>
+      <td>
+        <a href="${r.file}" target="_blank" class="sku-dl-btn" download>⬇ Download</a>
+      </td>
+    </tr>
+  `).join('');
+
+  skuResults.classList.add('visible');
+  resultsTitle.textContent = `Search results for "${q}"`;
+  resultsCount.textContent = `${unique.length} SKU${unique.length !== 1 ? 's' : ''} matched across ${[...new Set(unique.map(r=>r.brand))].join(', ')}`;
+}
+
+function filterCards(filter, btn) {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  clearSearch();
+  document.querySelectorAll('.brand-card').forEach(card => {
+    if (filter === 'all') {
+      card.style.display = '';
+    } else {
+      const cats = card.dataset.cats || '';
+      card.style.display = cats.includes(filter) ? '' : 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
