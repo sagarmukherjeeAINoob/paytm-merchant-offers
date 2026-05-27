@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paytm for Business — Brand Offers Portal</title>
+<meta name="description" content="Download No-Cost EMI and Cashback offer manuals. Search by brand and download instantly.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#002970;--sky:#00baf2;--blue:#0052cc;--green:#16a34a;
+  --charcoal:#2d3748;--muted:#64748b;--border:#e2e8f0;
+  --surface:#f7fafc;--white:#ffffff;--bg:#eef2f7;
+  --radius:14px;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--charcoal);
+  min-height:100vh;
+}
+
+/* ── NAVBAR ── */
+.navbar{
+  background:var(--navy);
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 clamp(16px,4vw,40px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 20px rgba(0,0,0,.25);
+}
+.nav-logo{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-name{
+  font-size:clamp(14px,2.5vw,18px);
+  font-weight:800;
+  color:white;
+  letter-spacing:-.2px;
+  line-height:1.1;
+}
+.nav-logo-sub{
+  font-size:clamp(10px,1.5vw,12px);
+  color:rgba(255,255,255,.5);
+  font-weight:500;
+  letter-spacing:.3px;
+}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-chip{
+  font-size:clamp(10px,1.2vw,11.5px);
+  font-weight:700;
+  color:var(--sky);
+  background:rgba(0,186,242,.12);
+  border:1px solid rgba(0,186,242,.25);
+  border-radius:20px;
+  padding:4px 12px;
+  white-space:nowrap;
+}
+.nav-month{
+  font-size:clamp(10px,1.2vw,12px);
+  color:rgba(255,255,255,.4);
+  font-family:'DM Mono',monospace;
+}
+@media(max-width:480px){.nav-month{display:none;}}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--navy) 0%,#004bb5 55%,#0070d8 100%);
+  padding:clamp(36px,6vw,60px) clamp(16px,5vw,40px) clamp(52px,8vw,80px);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 50%,rgba(0,186,242,.15) 0%,transparent 60%),
+    radial-gradient(ellipse at 80% 50%,rgba(0,186,242,.1)  0%,transparent 60%);
+}
+.hero-content{position:relative;z-index:1;}
+
+.hero-eyebrow{
+  display:inline-block;
+  font-size:clamp(9px,1.5vw,11px);
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--sky);
+  background:rgba(0,186,242,.1);
+  border:1px solid rgba(0,186,242,.25);
+  border-radius:20px;
+  padding:5px 16px;
+  margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(24px,5vw,42px);
+  font-weight:800;
+  color:white;
+  line-height:1.15;
+  letter-spacing:-.6px;
+  margin-bottom:36px;
+}
+.hero h1 span{color:var(--sky);}
+
+/* ── SEARCH ── */
+.search-wrap{
+  max-width:580px;
+  margin:0 auto;
+  position:relative;
+}
+.search-icon{
+  position:absolute;
+  left:18px;top:50%;
+  transform:translateY(-55%);
+  font-size:18px;
+  pointer-events:none;
+  display:flex;align-items:center;line-height:1;
+}
+.search-bar{
+  width:100%;
+  height:54px;
+  line-height:54px;
+  padding:0 48px 0 50px;
+  border-radius:12px;
+  border:2px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.97);
+  font-size:clamp(13px,2vw,15px);
+  font-family:'DM Sans',sans-serif;
+  color:var(--charcoal);
+  outline:none;
+  box-shadow:0 8px 40px rgba(0,0,0,.25);
+  transition:border .2s,box-shadow .2s;
+}
+.search-bar::placeholder{color:var(--muted);}
+.search-bar:focus{
+  border-color:var(--sky);
+  box-shadow:0 8px 40px rgba(0,0,0,.3),0 0 0 4px rgba(0,186,242,.15);
+}
+.search-clear{
+  position:absolute;right:16px;top:50%;
+  transform:translateY(-50%);
+  background:none;border:none;
+  color:var(--muted);font-size:18px;
+  cursor:pointer;display:none;padding:4px;line-height:1;
+}
+.search-hint{
+  margin-top:10px;
+  font-size:clamp(11px,1.5vw,13px);
+  color:rgba(255,255,255,.5);
+}
+
+/* ── MAIN ── */
+.main{
+  max-width:1200px;
+  margin:0 auto;
+  padding:clamp(24px,4vw,40px) clamp(16px,4vw,40px);
+}
+
+.results-header{
+  margin-bottom:20px;
+}
+.results-title{
+  font-size:clamp(14px,2vw,18px);
+  font-weight:700;
+  color:var(--navy);
+}
+
+/* ── NO RESULTS ── */
+.no-results{
+  text-align:center;
+  padding:60px 20px;
+  display:none;
+}
+.no-results-icon{font-size:40px;margin-bottom:12px;}
+.no-results h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.no-results p{font-size:13px;color:var(--muted);}
+
+/* ── BRAND GRID ── */
+.brand-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:16px;
+}
+
+@media(max-width:480px){
+  .brand-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+}
+@media(min-width:900px){
+  .brand-grid{grid-template-columns:repeat(5,1fr);}
+}
+@media(min-width:1100px){
+  .brand-grid{grid-template-columns:repeat(6,1fr);}
+}
+
+/* ── BRAND CARD ── */
+.brand-card{
+  background:white;
+  border-radius:var(--radius);
+  border:1.5px solid var(--border);
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+  transition:transform .18s,box-shadow .18s,border-color .18s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:clamp(16px,3vw,24px) clamp(12px,2vw,20px) clamp(14px,2.5vw,20px);
+  gap:12px;
+  cursor:pointer;
+}
+.brand-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  border-color:var(--sky);
+}
+.brand-card:active{transform:translateY(-2px);}
+
+.card-accent-dot{
+  width:10px;height:10px;
+  border-radius:50%;
+  flex-shrink:0;
+  align-self:flex-start;
+}
+.card-brand-name{
+  font-size:clamp(14px,2vw,17px);
+  font-weight:800;
+  letter-spacing:-.2px;
+  line-height:1.2;
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+.btn-dl{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:9px 0;
+  width:100%;
+  border-radius:8px;
+  background:var(--navy);
+  color:white;
+  font-size:clamp(11px,1.5vw,13px);
+  font-weight:700;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background .15s,transform .1s;
+  white-space:nowrap;
+}
+.btn-dl:hover{background:#003a9e;transform:translateY(-1px);}
+.btn-dl:active{transform:translateY(0);}
+
+/* hidden class */
+.brand-grid.hidden{display:none;}
+
+/* ── FOOTER ── */
+.site-footer{
+  background:var(--navy);
+  color:rgba(255,255,255,.5);
+  text-align:center;
+  padding:24px 20px;
+  font-size:12px;
+  margin-top:48px;
+}
+.site-footer strong{color:white;}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <div class="nav-logo-name">Paytm for Business</div>
+    <div class="nav-logo-sub">Brand Offers Portal</div>
+  </div>
+  <div class="nav-right">
+    <span class="nav-chip">No-Cost EMI and Cashback Offers</span>
+    <span class="nav-month">May 2026</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">No-Cost EMI &amp; Cashback Offers</div>
+    <h1>Search for your <span>brand</span> and<br>download instantly</h1>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input
+        type="text"
+        class="search-bar"
+        id="searchInput"
+        placeholder="Search brand"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+      <div class="search-hint">Try Apple &nbsp;·&nbsp; Sony &nbsp;·&nbsp; Samsung &nbsp;·&nbsp; Voltas</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="results-header">
+    <div class="results-title" id="resultsTitle">All Brands — May 2026</div>
+  </div>
+
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>No brand found</h3>
+    <p>Try searching for "Samsung", "Sony", "Apple" or "Voltas"</p>
+  </div>
+
+  <div class="brand-grid" id="brandGrid"></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <strong>Paytm for Business</strong> &nbsp;·&nbsp; Brand Offers Portal &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Confidential — For Internal Use Only
+</footer>
+
+<script>
+const BASE = 'https://sagarmukherjeeainoob.github.io/paytm-merchant-offers';
+
+const BRANDS = [
+  {name:'OnePlus',       file:'OnePlus_May2026_NoCostEMIOffers.html',       color:'#e53e3e'},
+  {name:'Apple',         file:'Apple_May2026_NoCostEMIOffers.html',          color:'#555555'},
+  {name:'Samsung Mobile',file:'Samsung_Mobile_May2026_NoCostEMIOffers.html', color:'#1428A0'},
+  {name:'Samsung CE',    file:'Samsung_CE_May2026_NoCostEMIOffers.html',     color:'#1428A0'},
+  {name:'Xiaomi',        file:'Xiaomi_May2026_NoCostEMIOffers.html',         color:'#ff6900'},
+  {name:'OPPO',          file:'OPPO_May2026_NoCostEMIOffers.html',           color:'#1F8F6B'},
+  {name:'HP',            file:'HP_May2026_NoCostEMIOffers.html',             color:'#0096D6'},
+  {name:'IFB',           file:'IFB_May2026_NoCostEMIOffers.html',            color:'#002970'},
+  {name:'Haier',         file:'Haier_May2026_NoCostEMIOffers.html',          color:'#003DA5'},
+  {name:'Vivo',          file:'Vivo_May2026_NoCostEMIOffers.html',           color:'#415FFF'},
+  {name:'Panasonic',     file:'Panasonic_May2026_NoCostEMIOffers.html',      color:'#003087'},
+  {name:'Godrej',        file:'Godrej_May2026_NoCostEMIOffers.html',         color:'#6B2D90'},
+  {name:'Realme',        file:'Realme_May2026_NoCostEMIOffers.html',         color:'#d97706'},
+  {name:'Motorola',      file:'Motorola_May2026_NoCostEMIOffers.html',       color:'#E1140A'},
+  {name:'Lenovo',        file:'Lenovo_May2026_NoCostEMIOffers.html',         color:'#E2231A'},
+  {name:'LG',            file:'LG_May2026_NoCostEMIOffers.html',             color:'#A50034'},
+  {name:'Acer',          file:'Acer_May2026_NoCostEMIOffers.html',           color:'#83B81A'},
+  {name:'BlueStar',      file:'BlueStar_May2026_NoCostEMIOffers.html',       color:'#0078D4'},
+  {name:'Daikin',        file:'Daikin_May2026_NoCostEMIOffers.html',         color:'#009FDB'},
+  {name:'Bose',          file:'Bose_May2026_NoCostEMIOffers.html',           color:'#333333'},
+  {name:'Amstrad',       file:'Amstrad_May2026_NoCostEMIOffers.html',        color:'#002970'},
+  {name:'JBL',           file:'JBL_May2026_NoCostEMIOffers.html',            color:'#e53e3e'},
+  {name:'Whirlpool',     file:'Whirlpool_May2026_NoCostEMIOffers.html',      color:'#003087'},
+  {name:'Bosch',         file:'Bosch_May2026_NoCostEMIOffers.html',          color:'#e53e3e'},
+  {name:'Havells Lloyd', file:'Havells_Lloyd_May2026_NoCostEMIOffers.html',  color:'#E32119'},
+  {name:'Glen',          file:'Glen_May2026_NoCostEMIOffers.html',           color:'#002970'},
+  {name:'Canon',         file:'Canon_May2026_NoCostEMIOffers.html',          color:'#CC0000'},
+  {name:'Voltas',        file:'Voltas_May2026_NoCostEMIOffers.html',         color:'#e53e3e'},
+  {name:'Voltas Beko',   file:'Voltas_Beko_May2026_NoCostEMIOffers.html',    color:'#d97706'},
+  {name:'DishTV',        file:'DishTV_May2026_NoCostEMIOffers.html',         color:'#E8441A'},
+  {name:'Midea Toshiba', file:'Midea_Toshiba_May2026_NoCostEMIOffers.html',  color:'#E42313'},
+  {name:'Carrier',       file:'Carrier_May2026_NoCostEMIOffers.html',        color:'#003DA5'},
+  {name:'Midea',         file:'Midea_May2026_NoCostEMIOffers.html',          color:'#E42313'},
+  {name:'Croma',         file:'Croma_May2026_NoCostEMIOffers.html',          color:'#67C6CA'},
+  {name:'Sony',          file:'Sony_May2026_NoCostEMIOffers.html',           color:'#333333'},
+  {name:'Vijay Sales',   file:'Vijay_Sales_May2026_NoCostEMIOffers.html',    color:'#7c3aed'},
+  {name:'Tecno',         file:'Tecno_May2026_NoCostEMIOffers.html',          color:'#009B77'},
+  {name:'Itel',          file:'Itel_May2026_NoCostEMIOffers.html',           color:'#002970'},
+];
+
+const grid     = document.getElementById('brandGrid');
+const inp      = document.getElementById('searchInput');
+const clrBtn   = document.getElementById('searchClear');
+const noRes    = document.getElementById('noResults');
+const resTitle = document.getElementById('resultsTitle');
+
+function cardHTML(b) {
+  return `<div class="brand-card" data-name="${b.name.toLowerCase()}">
+    <div class="card-brand-name" style="color:${b.color};">${b.name}</div>
+    <a href="${BASE}/${b.file}" target="_blank" class="btn-dl" download="${b.file}">⬇ Download</a>
+  </div>`;
+}
+
+function render(list) {
+  grid.innerHTML = list.map(cardHTML).join('');
+}
+
+render(BRANDS);
+
+inp.addEventListener('input', () => {
+  const q = inp.value.trim().toLowerCase();
+  clrBtn.style.display = q ? 'block' : 'none';
+
+  if (!q) {
+    noRes.style.display = 'none';
+    resTitle.textContent = 'All Brands — May 2026';
+    render(BRANDS);
+    return;
+  }
+
+  const matched = BRANDS.filter(b => b.name.toLowerCase().includes(q));
+
+  if (matched.length === 0) {
+    grid.innerHTML = '';
+    noRes.style.display = 'block';
+    resTitle.textContent = `No results for "${inp.value.trim()}"`;
+  } else {
+    noRes.style.display = 'none';
+    resTitle.textContent = matched.length === 1
+      ? `1 brand found`
+      : `${matched.length} brands found`;
+    render(matched);
+  }
+});
+
+function clearSearch() {
+  inp.value = '';
+  clrBtn.style.display = 'none';
+  noRes.style.display = 'none';
+  resTitle.textContent = 'All Brands — May 2026';
+  render(BRANDS);
+}
+</script>
+</body>
+</html>
