@@ -6,7 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#002970">
-<title>Paytm POS EMI Offers — Brand Offers May 2026</title>
+<title>Paytm POS EMI Offers — Brand Offers June 2026</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--navy:#002970;--sky:#00baf2;--bg:#f0f4f8;--border:#e2e8f0;--muted:#64748b;--charcoal:#2d3748}
@@ -29,28 +29,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .search-bar:focus{border-color:var(--sky)}
 .search-bar::placeholder{color:var(--muted)}
 .clr-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:17px;cursor:pointer;display:none;padding:4px 6px;-webkit-tap-highlight-color:transparent}
-/* SKU SEARCH */
-.sku-section{background:#fff;border-top:none;padding:14px 16px;width:100%;max-width:100%;overflow:hidden;box-sizing:border-box}
+.or-div{margin-top:18px;font-size:17px;font-weight:800;color:#fff;letter-spacing:2px}
+.sku-section{background:#fff;border-top:none;padding:14px 16px;width:100%;max-width:100%;overflow:hidden}
 .sku-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .sku-row{display:flex;gap:6px;align-items:stretch;flex-wrap:wrap}
-.sku-row .sku-brand-sel{min-width:100px;max-width:120px;flex-shrink:0}
-.sku-row .sku-input-wrap{flex:1;min-width:0}
-.sku-row .sku-btn{flex-shrink:0}
-.sku-brand-sel{height:44px;padding:0 6px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;font-family:inherit;color:var(--charcoal);background:#fff;outline:none;flex-shrink:0;min-width:100px;max-width:120px;box-sizing:border-box}
-.sku-input{width:100%;height:44px;padding:0 30px 0 12px;border-radius:8px;border:1.5px solid var(--border);font-size:14px;font-family:inherit;color:var(--charcoal);outline:none;-webkit-appearance:none;box-sizing:border-box}
+.sku-brand-sel{height:44px;padding:0 6px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;font-family:inherit;color:var(--charcoal);background:#fff;outline:none;flex-shrink:0;min-width:100px;max-width:120px}
+.sku-input-wrap{position:relative;flex:1;min-width:0}
+.sku-input{width:100%;height:44px;padding:0 30px 0 12px;border-radius:8px;border:1.5px solid var(--border);font-size:14px;font-family:inherit;color:var(--charcoal);outline:none;-webkit-appearance:none}
 .sku-input:focus,.sku-brand-sel:focus{border-color:var(--sky)}
 .sku-btn{height:44px;padding:0 14px;border-radius:8px;background:var(--navy);color:#fff;font-size:13px;font-weight:700;font-family:inherit;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;-webkit-tap-highlight-color:transparent}
 .sku-btn:active{background:#003a9e}
+.sku-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;display:none;padding:2px 4px;-webkit-tap-highlight-color:transparent}
 .sku-hint-row{display:flex;align-items:center;gap:6px;margin-top:7px}
 .sku-hint{font-size:11px;color:var(--muted);flex:1}
 .info-btn{background:none;border:none;color:var(--sky);font-size:15px;cursor:pointer;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.info-box{display:none;background:#f0f8ff;border:1px solid #bae0fd;border-radius:8px;padding:12px 14px 12px 14px;margin-top:8px;font-size:12px;color:var(--charcoal);line-height:1.7;position:relative}
+.info-box{display:none;background:#f0f8ff;border:1px solid #bae0fd;border-radius:8px;padding:12px 14px;margin-top:8px;font-size:12px;color:var(--charcoal);line-height:1.7;position:relative}
 .info-box ul{margin-left:16px;margin-top:4px}
 .info-box li{margin-bottom:2px}
 .info-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:14px;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.sku-input-wrap{position:relative;flex:1}
-.sku-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;display:none;padding:2px 4px;-webkit-tap-highlight-color:transparent}
-.sku-hint{font-size:11px;color:var(--muted);margin-top:7px}
 .sku-results{padding:0 16px 16px;background:#fff;width:100%;max-width:100%;box-sizing:border-box;overflow:hidden}
 .sku-status{font-size:12px;color:var(--muted);padding:10px 0 6px;font-style:italic}
 .sku-status.found{color:#15803d;font-style:normal;font-weight:600}
@@ -64,7 +60,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .result-tbl tr:last-child td{border-bottom:none}
 .result-tbl td:first-child{font-weight:600;color:var(--navy);width:42%;background:#f8fafc;white-space:nowrap}
 .result-tbl td:last-child{color:var(--charcoal);word-break:break-word}
-/* GRID */
 .main{padding:16px 12px 60px;max-width:960px;margin:0 auto}
 .result-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;padding:0 2px}
 .empty{text-align:center;padding:40px 20px;display:none}
@@ -75,7 +70,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 @media(min-width:420px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr);gap:12px}}
 @media(min-width:800px){.grid{grid-template-columns:repeat(5,1fr);gap:14px}}
-/* CARD */
 .card{background:#fff;border-radius:12px;border:1.5px solid var(--border);padding:14px 10px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:0 1px 6px rgba(0,0,0,.06);-webkit-tap-highlight-color:transparent}
 .card:active{transform:scale(.97)}
 @media(hover:hover){.card{transition:transform .18s,box-shadow .18s,border-color .18s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1);border-color:var(--sky)}}
@@ -93,14 +87,14 @@ footer strong{color:#fff}
 <nav class="nav">
   <div>
     <div class="nav-name">Paytm POS EMI Offers</div>
-    <div class="nav-sub">Brand Offers Portal · May 2026</div>
+    <div class="nav-sub">Brand Offers Portal · June 2026</div>
   </div>
-  <span class="nav-badge">19 Brands</span>
+  <span class="nav-badge" id="brandCount">-- Brands</span>
 </nav>
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-pill">No-Cost EMI &amp; Cashback · May 2026</div>
+    <div class="hero-pill">No-Cost EMI &amp; Cashback · June 2026</div>
     <h1>Find your <span>brand</span><br>and download the offer PDF</h1>
     <div class="search-wrap">
       <span class="s-icon">🔍</span>
@@ -108,34 +102,43 @@ footer strong{color:#fff}
              autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
       <button class="clr-btn" id="clrBtn" onclick="clearBrandSearch()">✕</button>
     </div>
-    <div style="margin-top:18px;font-size:17px;font-weight:800;color:#fff;letter-spacing:2px;">OR</div>
+    <div class="or-div">OR</div>
   </div>
 </div>
 
-<!-- SKU SEARCH -->
 <div class="sku-section">
   <div class="sku-title">🔎 Search by SKU / Model ID / Product Name</div>
   <div class="sku-row">
     <select class="sku-brand-sel" id="skuBrand">
       <option value="">Brand…</option>
-      <option value="acer">Acer</option>
       <option value="apple">Apple</option>
+      <option value="amstrad">Amstrad</option>
+      <option value="asus">Asus</option>
       <option value="bluestar">Blue Star</option>
-      <option value="daikin">Daikin</option>
+      <option value="bose">Bose</option>
+      <option value="canon">Canon</option>
+      <option value="croma">Croma</option>
+      <option value="dishtv">DishTV</option>
+      <option value="glen">Glen</option>
       <option value="godrej">Godrej</option>
       <option value="haier">Haier</option>
+      <option value="havells">Havells Lloyd</option>
       <option value="hp">HP</option>
       <option value="ifb">IFB</option>
-      <option value="lenovo">Lenovo</option>
-      <option value="lg">LG</option>
-      <option value="motorola">Motorola</option>
+      <option value="itel">Itel</option>
+      <option value="jbl">JBL</option>
+      <option value="nothing">Nothing</option>
       <option value="oneplus">OnePlus</option>
       <option value="oppo">OPPO</option>
-      <option value="panasonic">Panasonic</option>
       <option value="realme">Realme</option>
+      <option value="reliancereconnect">Reliance Reconnect</option>
       <option value="samsung mobile">Samsung Mobile</option>
       <option value="samsung ce">Samsung CE</option>
+      <option value="tcl">TCL</option>
+      <option value="tecno">Tecno</option>
+      <option value="vijaysales">Vijay Sales</option>
       <option value="vivo">Vivo</option>
+      <option value="whirlpool">Whirlpool</option>
       <option value="xiaomi">Xiaomi</option>
     </select>
     <div class="sku-input-wrap">
@@ -159,7 +162,7 @@ footer strong{color:#fff}
       <li>Select a <b>brand</b> from the dropdown</li>
       <li>Type a <b>SKU / Model ID / Product Name</b> in the text box</li>
       <li>Tap <b>Search</b> — results appear below</li>
-      <li>To search again, tap <b>✕</b> in the search box to clear, then type a new SKU</li>
+      <li>Tap <b>✕</b> in the search box to clear and search again</li>
       <li>To find a brand PDF, use the <b>brand search bar</b> above</li>
     </ul>
   </div>
@@ -167,137 +170,146 @@ footer strong{color:#fff}
 <div class="sku-results" id="skuResults"></div>
 
 <main class="main">
-  <div class="result-label" id="label">All Brands — May 2026</div>
+  <div class="result-label" id="label">All Brands — June 2026</div>
   <div class="empty" id="empty">
     <div class="empty-icon">🔍</div>
     <h3>No brand found</h3>
-    <p>Try "Samsung", "LG", "Apple" or "Vivo"</p>
+    <p>Try "Samsung", "Vivo", "Apple" or "Whirlpool"</p>
   </div>
   <div class="grid" id="grid"></div>
 </main>
 
 <footer>
   <strong>Paytm POS EMI Offers</strong> &nbsp;·&nbsp; Brand Offers Portal<br>
-  May 2026 &nbsp;·&nbsp; Confidential — For Internal Use Only
+  June 2026 &nbsp;·&nbsp; Confidential — For Internal Use Only
 </footer>
 
 <script>
 const BASE = 'https://paytm-ppsl-merchant.github.io/paytm-brand-offers';
 
 const BRANDS = [
-  {name:'OnePlus',        file:'OnePlus_May2026_NoCostEMIOffers.pdf',       color:'#e53e3e', logo:'logos/oneplus.png'},
-  {name:'Apple',          file:'Apple_May2026_NoCostEMIOffers.pdf',          color:'#000000', logo:'logos/apple.png'},
-  {name:'Samsung Mobile', file:'Samsung_Mobile_May2026_NoCostEMIOffers.pdf', color:'#1428A0', logo:'logos/samsung.png'},
-  {name:'Samsung CE',     file:'Samsung_CE_May2026_NoCostEMIOffers.pdf',     color:'#1428A0', logo:'logos/samsung.png'},
-  {name:'Xiaomi',         file:'Xiaomi_May2026_NoCostEMIOffers.pdf',         color:'#ff6900', logo:'logos/xiaomi.png'},
-  {name:'OPPO',           file:'OPPO_May2026_NoCostEMIOffers.pdf',           color:'#1F8F6B', logo:'logos/oppo.png'},
-  {name:'Vivo',           file:'Vivo_May2026_NoCostEMIOffers.pdf',           color:'#415FFF', logo:'logos/vivo.png'},
-  {name:'Realme',         file:'Realme_May2026_NoCostEMIOffers.pdf',         color:'#d97706', logo:'logos/realme.png'},
-  {name:'Motorola',       file:'Motorola_May2026_NoCostEMIOffers.pdf',       color:'#E1140A', logo:'logos/motorola.png'},
-  {name:'HP',             file:'HP_May2026_NoCostEMIOffers.pdf',             color:'#0096D6', logo:'logos/hp.png'},
-  {name:'Lenovo',         file:'Lenovo_May2026_NoCostEMIOffers.pdf',         color:'#E2231A', logo:'logos/lenovo.png'},
-  {name:'LG',             file:'LG_May2026_NoCostEMIOffers.pdf',             color:'#A50034', logo:'logos/lg.png'},
-  {name:'Panasonic',      file:'Panasonic_May2026_NoCostEMIOffers.pdf',      color:'#003087', logo:'logos/panasonic.png'},
-  {name:'Haier',          file:'Haier_May2026_NoCostEMIOffers.pdf',          color:'#003DA5', logo:'logos/haier.png'},
-  {name:'IFB',            file:'IFB_May2026_NoCostEMIOffers.pdf',            color:'#002970', logo:'logos/ifb.png'},
-  {name:'Godrej',         file:'Godrej_May2026_NoCostEMIOffers.pdf',         color:'#6B2D90', logo:'logos/godrej.png'},
-  {name:'Acer',           file:'Acer_May2026_NoCostEMIOffers.pdf',           color:'#83B81A', logo:'logos/acer.png'},
-  {name:'Blue Star',      file:'BlueStar_May2026_NoCostEMIOffers.pdf',       color:'#0078D4', logo:'logos/bluestar.png'},
-  {name:'Daikin',         file:'Daikin_May2026_NoCostEMIOffers.pdf',         color:'#009FDB', logo:'logos/daikin.png'},
+  {name:'OnePlus',           file:'OnePlus_Jun2026_NoCostEMIOffers.pdf',            color:'#e53e3e', logo:'logos/oneplus.png'},
+  {name:'Apple',             file:'Apple_Jun2026_NoCostEMIOffers.pdf',              color:'#444444', logo:null},
+  {name:'Samsung Mobile',    file:'Samsung_Mobile_Jun2026_NoCostEMIOffers.pdf',     color:'#1428A0', logo:'logos/samsung.png'},
+  {name:'Samsung CE',        file:'Samsung_CE_Jun2026_NoCostEMIOffers.pdf',         color:'#1428A0', logo:'logos/samsung.png'},
+  {name:'Xiaomi',            file:'Xiaomi_Jun2026_NoCostEMIOffers.pdf',             color:'#ff6900', logo:'logos/xiaomi.png'},
+  {name:'OPPO',              file:'OPPO_Jun2026_NoCostEMIOffers.pdf',               color:'#1F8F6B', logo:'logos/oppo.png'},
+  {name:'Vivo',              file:'Vivo_Jun2026_NoCostEMIOffers.pdf',               color:'#415FFF', logo:'logos/vivo.png'},
+  {name:'Realme',            file:'Realme_Jun2026_NoCostEMIOffers.pdf',             color:'#d97706', logo:'logos/realme.png'},
+  {name:'HP',                file:'HP_Jun2026_NoCostEMIOffers.pdf',                 color:'#0096D6', logo:'logos/hp.png'},
+  {name:'Haier',             file:'Haier_Jun2026_NoCostEMIOffers.pdf',              color:'#003DA5', logo:'logos/haier.png'},
+  {name:'IFB',               file:'IFB_Jun2026_NoCostEMIOffers.pdf',               color:'#002970', logo:'logos/ifb.png'},
+  {name:'Godrej',            file:'Godrej_Jun2026_NoCostEMIOffers.pdf',             color:'#6B2D90', logo:'logos/godrej.png'},
+  {name:'Blue Star',         file:'BlueStar_Jun2026_NoCostEMIOffers.pdf',           color:'#0078D4', logo:'logos/bluestar.png'},
+  {name:'Whirlpool',         file:'Whirlpool_Jun2026_NoCostEMIOffers.pdf',          color:'#003087', logo:'logos/whirlpool.png'},
+  {name:'Asus',              file:'Asus_Jun2026_NoCostEMIOffers.pdf',               color:'#00539C', logo:'logos/asus.png'},
+  {name:'Havells Lloyd',     file:'Havells_Jun2026_NoCostEMIOffers.pdf',            color:'#1B3A6B', logo:'logos/havellslloyd.png'},
+  {name:'TCL',               file:'TCL_Jun2026_NoCostEMIOffers.pdf',               color:'#E53935', logo:'logos/tcl.png'},
+  {name:'JBL',               file:'JBL_Jun2026_NoCostEMIOffers.pdf',               color:'#E35205', logo:'logos/jbl.png'},
+  {name:'Bose',              file:'Bose_Jun2026_NoCostEMIOffers.pdf',               color:'#222222', logo:'logos/bose.png'},
+  {name:'Canon',             file:'Canon_Jun2026_NoCostEMIOffers.pdf',              color:'#CC0000', logo:'logos/canon.png'},
+  {name:'Vijay Sales',       file:'Vijay_Sales_Jun2026_NoCostEMIOffers.pdf',        color:'#E53935', logo:'logos/vijaysales.png'},
+  {name:'Croma',             file:'Croma_Jun2026_NoCostEMIOffers.pdf',              color:'#009B8C', logo:'logos/croma.png'},
+  {name:'Glen',              file:'Glen_Jun2026_NoCostEMIOffers.pdf',               color:'#0066B3', logo:'logos/glen.png'},
+  {name:'Tecno',             file:'Tecno_Jun2026_NoCostEMIOffers.pdf',              color:'#0066FF', logo:'logos/tecno.png'},
+  {name:'Nothing',           file:'Nothing_Jun2026_NoCostEMIOffers.pdf',            color:'#111111', logo:'logos/nothing.png'},
+  {name:'Amstrad',           file:'Amstrad_Jun2026_NoCostEMIOffers.pdf',            color:'#1C2951', logo:'logos/amstrad.png'},
+  {name:'DishTV',            file:'DishTV_Jun2026_NoCostEMIOffers.pdf',             color:'#F26522', logo:'logos/dishtv.png'},
+  {name:'Reliance Reconnect',file:'Reliance_Reconnect_Jun2026_NoCostEMIOffers.pdf', color:'#CC0000', logo:'logos/reliancereconnect.png'},
+  {name:'Itel',              file:'Itel_Jun2026_NoCostEMIOffers.pdf',               color:'#333333', logo:'logos/itel.png'},
 ];
 
 const SEARCH_FILES = {
-  'acer':           'acer_search.json',
-  'apple':          'apple_search.json',
-  'bluestar':       'bluestar_search.json',
-  'daikin':         'daikin_search.json',
-  'oneplus':        'oneplus_search.json',
-  'ifb':            'ifb_search.json',
-  'samsung mobile': 'samsung_mobile_search.json',
-  'samsung ce':     'samsung_ce_search.json',
-  'xiaomi':         'xiaomi_search.json',
-  'oppo':           'oppo_search.json',
-  'hp':             'hp_search.json',
-  'haier':          'haier_search.json',
-  'vivo':           'vivo_search.json',
-  'panasonic':      'panasonic_search.json',
-  'godrej':         'godrej_search.json',
-  'realme':         'realme_search.json',
-  'motorola':       'motorola_search.json',
-  'lenovo':         'lenovo_search.json',
-  'lg':             'lg_search.json',
+  'apple':             'apple_search.json',
+  'amstrad':           'amstrad_search.json',
+  'asus':              'asus_search.json',
+  'bluestar':          'bluestar_search.json',
+  'bose':              'bose_search.json',
+  'canon':             'canon_search.json',
+  'croma':             'croma_search.json',
+  'dishtv':            'dishtv_search.json',
+  'glen':              'glen_search.json',
+  'godrej':            'godrej_search.json',
+  'haier':             'haier_search.json',
+  'havells':           'havells_search.json',
+  'hp':                'hp_search.json',
+  'ifb':               'ifb_search.json',
+  'itel':              'itel_search.json',
+  'jbl':               'jbl_search.json',
+  'nothing':           'nothing_search.json',
+  'oneplus':           'oneplus_search.json',
+  'oppo':              'oppo_search.json',
+  'realme':            'realme_search.json',
+  'reliancereconnect': 'reliancereconnect_search.json',
+  'samsung mobile':    'samsung_mobile_search.json',
+  'samsung ce':        'samsung_ce_search.json',
+  'tcl':               'tcl_search.json',
+  'tecno':             'tecno_search.json',
+  'vijaysales':        'vijaysales_search.json',
+  'vivo':              'vivo_search.json',
+  'whirlpool':         'whirlpool_search.json',
+  'xiaomi':            'xiaomi_search.json',
 };
-const searchCache  = {};
 
-const grid  = document.getElementById('grid');
-const inp   = document.getElementById('q');
-const clrBtn= document.getElementById('clrBtn');
-const lbl   = document.getElementById('label');
-const empty = document.getElementById('empty');
+const searchCache = {};
+
+// Update badge
+document.getElementById('brandCount').textContent = BRANDS.length + ' Brands';
+
+const grid=document.getElementById('grid'),inp=document.getElementById('q');
+const clrBtn=document.getElementById('clrBtn'),lbl=document.getElementById('label');
+const empty=document.getElementById('empty'),skuResults=document.getElementById('skuResults');
 
 function card(b) {
   const logo = b.logo
     ? `<div class="card-logo"><img src="${BASE}/${b.logo}" alt="${b.name}" loading="lazy" onerror="this.parentNode.style.display='none'"></div>`
     : '';
-  return `<div class="card">
-    ${logo}
+  return `<div class="card">${logo}
     <div class="card-name" style="color:${b.color}">${b.name}</div>
     <a class="btn" href="${BASE}/${b.file}" target="_blank" rel="noopener">⬇&nbsp;Download PDF</a>
   </div>`;
 }
-
-function render(list) { grid.innerHTML = list.map(card).join(''); }
+function render(list){grid.innerHTML=list.map(card).join('');}
 render(BRANDS);
 
-inp.addEventListener('input', function() {
-  const q = this.value.trim().toLowerCase();
-  clrBtn.style.display = q ? 'block' : 'none';
-  if (!q) { lbl.textContent='All Brands — May 2026'; empty.style.display='none'; render(BRANDS); return; }
-  const hit = BRANDS.filter(b => b.name.toLowerCase().includes(q));
-  if (!hit.length) {
-    grid.innerHTML=''; empty.style.display='block';
+inp.addEventListener('input',function(){
+  const q=this.value.trim().toLowerCase();
+  clrBtn.style.display=q?'block':'none';
+  if(!q){lbl.textContent='All Brands — June 2026';empty.style.display='none';render(BRANDS);return;}
+  const hit=BRANDS.filter(b=>b.name.toLowerCase().includes(q));
+  if(!hit.length){grid.innerHTML='';empty.style.display='block';
     lbl.textContent=`No results for "${this.value.trim()}"`;
-  } else {
-    empty.style.display='none';
-    lbl.textContent=`${hit.length} brand${hit.length>1?'s':''} found`;
-    render(hit);
-  }
+  }else{empty.style.display='none';
+    lbl.textContent=`${hit.length} brand${hit.length>1?'s':''} found`;render(hit);}
 });
+function clearBrandSearch(){
+  inp.value='';clrBtn.style.display='none';empty.style.display='none';
+  lbl.textContent='All Brands — June 2026';render(BRANDS);}
 
-function clearBrandSearch() {
-  inp.value=''; clrBtn.style.display='none'; empty.style.display='none';
-  lbl.textContent='All Brands — May 2026'; render(BRANDS);
-}
-
-// SKU Search
-const skuResults = document.getElementById('skuResults');
-
-async function skuSearch() {
-  const brand = document.getElementById('skuBrand').value.trim().toLowerCase();
-  const q     = document.getElementById('skuQ').value.trim().toLowerCase();
-  if (!brand) { showSkuStatus('Please select a brand first.',''); return; }
-  if (!q)     { showSkuStatus('Please enter a SKU or Model ID.',''); return; }
-  if (!SEARCH_FILES[brand]) { showSkuStatus('SKU search not available for this brand yet.','notfound'); return; }
+async function skuSearch(){
+  const brand=document.getElementById('skuBrand').value.trim().toLowerCase();
+  const q=document.getElementById('skuQ').value.trim().toLowerCase();
+  if(!brand){showSkuStatus('Please select a brand first.','');return;}
+  if(!q){showSkuStatus('Please enter a SKU or Model ID.','');return;}
+  if(!SEARCH_FILES[brand]){showSkuStatus('SKU search not available for this brand yet.','notfound');return;}
   showSkuStatus('Loading offer data…','');
-  if (!searchCache[brand]) {
-    try {
-      const res = await fetch(`${BASE}/${SEARCH_FILES[brand]}`);
-      if (!res.ok) throw new Error();
-      searchCache[brand] = await res.json();
-    } catch { showSkuStatus('Failed to load data. Check connection and retry.','notfound'); return; }
+  if(!searchCache[brand]){
+    try{
+      const res=await fetch(`${BASE}/${SEARCH_FILES[brand]}`);
+      if(!res.ok)throw new Error();
+      searchCache[brand]=await res.json();
+    }catch{showSkuStatus('Failed to load data. Check connection and retry.','notfound');return;}
   }
-  const db      = searchCache[brand];
-  const matches = db.rows.filter(row => row.s.some(s => s.toLowerCase().includes(q)));
-  if (!matches.length) {
-    showSkuStatus(`No results for "${document.getElementById('skuQ').value.trim()}"`, 'notfound'); return;
-  }
+  const db=searchCache[brand];
+  const matches=db.rows.filter(row=>row.s.some(s=>s.toLowerCase().includes(q)));
+  if(!matches.length){showSkuStatus(`No results for "${document.getElementById('skuQ').value.trim()}"`, 'notfound');return;}
   showSkuStatus(`${matches.length} result${matches.length>1?'s':''} found for "${document.getElementById('skuQ').value.trim()}"`, 'found');
-  const brandName = brand.split(' ').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
-  const cards = matches.map(row => {
-    const hdrs = db.tables[row.t] || [];
-    const trows = hdrs.map((h,i) => {
-      const v = (row.v[i]||'').toString().trim();
-      return v ? `<tr><td>${esc(h)}</td><td>${esc(v)}</td></tr>` : '';
+  const brandName=brand.split(' ').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
+  const cards=matches.map(row=>{
+    const hdrs=db.tables[row.t]||[];
+    const trows=hdrs.map((h,i)=>{
+      const v=(row.v[i]||'').toString().trim();
+      return v?`<tr><td>${esc(h)}</td><td>${esc(v)}</td></tr>`:'';
     }).filter(Boolean).join('');
     return `<div class="result-card">
       <div class="result-card-hdr">
@@ -307,29 +319,13 @@ async function skuSearch() {
       <table class="result-tbl">${trows}</table>
     </div>`;
   }).join('');
-  skuResults.innerHTML = skuResults.querySelector('.sku-status').outerHTML + cards;
+  skuResults.innerHTML=skuResults.querySelector('.sku-status').outerHTML+cards;
 }
-
-function showSkuStatus(msg, cls) {
-  skuResults.innerHTML = `<div class="sku-status ${cls}">${msg}</div>`;
-}
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-document.getElementById('skuQ').addEventListener('keydown', e => { if(e.key==='Enter') skuSearch(); });
-
-function toggleInfo() {
-  const box = document.getElementById('infoBox');
-  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-}
-
-function clearSkuInput() {
-  const inp = document.getElementById('skuQ');
-  inp.value = '';
-  document.getElementById('skuClear').style.display = 'none';
-  document.getElementById('skuResults').innerHTML = '';
-  inp.focus();
-}
+function showSkuStatus(msg,cls){skuResults.innerHTML=`<div class="sku-status ${cls}">${msg}</div>`;}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function toggleInfo(){const b=document.getElementById('infoBox');b.style.display=b.style.display==='block'?'none':'block';}
+function clearSkuInput(){const i=document.getElementById('skuQ');i.value='';document.getElementById('skuClear').style.display='none';skuResults.innerHTML='';i.focus();}
+document.getElementById('skuQ').addEventListener('keydown',e=>{if(e.key==='Enter')skuSearch();});
 </script>
 </body>
 </html>
