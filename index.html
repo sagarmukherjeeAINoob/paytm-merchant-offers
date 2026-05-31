@@ -2,330 +2,482 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#002970">
-<title>Paytm POS EMI Offers — Brand Offers June 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paytm Brand Offers Portal</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#002970;--sky:#00baf2;--bg:#f0f4f8;--border:#e2e8f0;--muted:#64748b;--charcoal:#2d3748}
-html{-webkit-text-size-adjust:100%}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--charcoal);min-height:100dvh;overflow-x:hidden;width:100%}
-.nav{background:var(--navy);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
-.nav-name{font-size:15px;font-weight:800;color:#fff;line-height:1.1}
-.nav-sub{font-size:10px;color:rgba(255,255,255,.5);margin-top:1px}
-.nav-badge{font-size:10px;font-weight:700;color:var(--sky);background:rgba(0,186,242,.12);border:1px solid rgba(0,186,242,.25);border-radius:20px;padding:4px 10px;white-space:nowrap;flex-shrink:0}
-.hero{background:linear-gradient(135deg,#002970 0%,#004bb5 60%,#0070d8 100%);padding:24px 16px 14px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(0,186,242,.15) 0%,transparent 60%)}
-.hero-inner{position:relative;z-index:1}
-.hero-pill{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky);background:rgba(0,186,242,.1);border:1px solid rgba(0,186,242,.25);border-radius:20px;padding:4px 12px;margin-bottom:10px}
-.hero h1{font-size:20px;font-weight:800;color:#fff;line-height:1.25;margin-bottom:18px}
-.hero h1 span{color:var(--sky)}
-@media(min-width:480px){.hero h1{font-size:26px}}
-.search-wrap{position:relative;max-width:480px;margin:0 auto}
-.s-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none}
-.search-bar{width:100%;height:48px;padding:0 42px;border-radius:12px;border:2px solid rgba(255,255,255,.15);background:rgba(255,255,255,.97);font-size:15px;font-family:inherit;color:var(--charcoal);outline:none;-webkit-appearance:none;box-shadow:0 4px 20px rgba(0,0,0,.2)}
-.search-bar:focus{border-color:var(--sky)}
-.search-bar::placeholder{color:var(--muted)}
-.clr-btn{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:17px;cursor:pointer;display:none;padding:4px 6px;-webkit-tap-highlight-color:transparent}
-.or-div{margin-top:18px;font-size:17px;font-weight:800;color:#fff;letter-spacing:2px}
-.sku-section{background:#fff;border-top:none;padding:14px 16px;width:100%;max-width:100%;overflow:hidden}
-.sku-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.sku-row{display:flex;gap:6px;align-items:stretch;flex-wrap:wrap}
-.sku-brand-sel{height:44px;padding:0 6px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;font-family:inherit;color:var(--charcoal);background:#fff;outline:none;flex-shrink:0;min-width:100px;max-width:120px}
-.sku-input-wrap{position:relative;flex:1;min-width:0}
-.sku-input{width:100%;height:44px;padding:0 30px 0 12px;border-radius:8px;border:1.5px solid var(--border);font-size:14px;font-family:inherit;color:var(--charcoal);outline:none;-webkit-appearance:none}
-.sku-input:focus,.sku-brand-sel:focus{border-color:var(--sky)}
-.sku-btn{height:44px;padding:0 14px;border-radius:8px;background:var(--navy);color:#fff;font-size:13px;font-weight:700;font-family:inherit;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.sku-btn:active{background:#003a9e}
-.sku-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:15px;cursor:pointer;display:none;padding:2px 4px;-webkit-tap-highlight-color:transparent}
-.sku-hint-row{display:flex;align-items:center;gap:6px;margin-top:7px}
-.sku-hint{font-size:11px;color:var(--muted);flex:1}
-.info-btn{background:none;border:none;color:var(--sky);font-size:15px;cursor:pointer;padding:0;line-height:1;flex-shrink:0;-webkit-tap-highlight-color:transparent}
-.info-box{display:none;background:#f0f8ff;border:1px solid #bae0fd;border-radius:8px;padding:12px 14px;margin-top:8px;font-size:12px;color:var(--charcoal);line-height:1.7;position:relative}
-.info-box ul{margin-left:16px;margin-top:4px}
-.info-box li{margin-bottom:2px}
-.info-close{position:absolute;top:8px;right:10px;background:none;border:none;font-size:14px;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.sku-results{padding:0 16px 16px;background:#fff;width:100%;max-width:100%;box-sizing:border-box;overflow:hidden}
-.sku-status{font-size:12px;color:var(--muted);padding:10px 0 6px;font-style:italic}
-.sku-status.found{color:#15803d;font-style:normal;font-weight:600}
-.sku-status.notfound{color:#dc2626;font-style:normal;font-weight:600}
-.result-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);width:100%;box-sizing:border-box}
-.result-card-hdr{background:var(--navy);padding:8px 12px;display:flex;align-items:center;gap:8px}
-.result-card-brand{font-size:12px;font-weight:800;color:#fff}
-.result-card-table{font-size:10px;color:rgba(255,255,255,.6)}
-.result-tbl{width:100%;border-collapse:collapse;font-size:11px}
-.result-tbl td{padding:6px 10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4}
-.result-tbl tr:last-child td{border-bottom:none}
-.result-tbl td:first-child{font-weight:600;color:var(--navy);width:42%;background:#f8fafc;white-space:nowrap}
-.result-tbl td:last-child{color:var(--charcoal);word-break:break-word}
-.main{padding:16px 12px 60px;max-width:960px;margin:0 auto}
-.result-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px;padding:0 2px}
-.empty{text-align:center;padding:40px 20px;display:none}
-.empty-icon{font-size:34px;margin-bottom:8px}
-.empty h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px}
-.empty p{font-size:12px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:420px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:600px){.grid{grid-template-columns:repeat(4,1fr);gap:12px}}
-@media(min-width:800px){.grid{grid-template-columns:repeat(5,1fr);gap:14px}}
-.card{background:#fff;border-radius:12px;border:1.5px solid var(--border);padding:14px 10px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;box-shadow:0 1px 6px rgba(0,0,0,.06);-webkit-tap-highlight-color:transparent}
-.card:active{transform:scale(.97)}
-@media(hover:hover){.card{transition:transform .18s,box-shadow .18s,border-color .18s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1);border-color:var(--sky)}}
-.card-logo{width:100%;height:44px;display:flex;align-items:center;justify-content:center}
-.card-logo img{max-width:100%;max-height:44px;object-fit:contain}
-.card-name{font-size:13px;font-weight:800;line-height:1.25;width:100%}
-.btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:9px 6px;border-radius:8px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;font-family:inherit;border:none;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;min-height:38px}
-.btn:active,.btn:hover{background:#003a9e}
-footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:18px 16px;font-size:11px;line-height:1.7}
-footer strong{color:#fff}
+  :root {
+    --primary: #00BAF2;
+    --primary-dark: #0099CC;
+    --bg: #F4F6F9;
+    --card-bg: #FFFFFF;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg); color: var(--text); min-height: 100vh; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #001F5C 0%, #003DA5 60%, #00BAF2 100%);
+    padding: 24px 32px;
+    display: flex; align-items: center; gap: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .header-logo { height: 48px; filter: brightness(0) invert(1); }
+  .header h1 { color: white; font-size: 22px; font-weight: 700; line-height: 1.2; }
+  .header p { color: rgba(255,255,255,0.75); font-size: 13px; margin-top: 2px; }
+  
+  /* Main layout */
+  .container { max-width: 1400px; margin: 0 auto; padding: 32px 20px; }
+  
+  /* Tabs */
+  .tabs { display: flex; gap: 8px; margin-bottom: 28px; }
+  .tab { padding: 10px 24px; border-radius: 50px; border: 2px solid var(--border);
+    background: white; cursor: pointer; font-size: 14px; font-weight: 600;
+    color: var(--muted); transition: all 0.2s; }
+  .tab.active { background: var(--primary); border-color: var(--primary); color: white; }
+  .tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+  
+  /* Section */
+  .section { display: none; }
+  .section.active { display: block; }
+  
+  /* Search bar */
+  .search-bar {
+    display: flex; gap: 10px; margin-bottom: 28px;
+    background: white; padding: 12px 16px; border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .search-bar input, .search-bar select {
+    flex: 1; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 10px 14px; font-size: 14px; outline: none; transition: border 0.2s;
+  }
+  .search-bar input:focus, .search-bar select:focus { border-color: var(--primary); }
+  .search-bar select { flex: 0 0 200px; cursor: pointer; }
+  .btn-search {
+    padding: 10px 24px; background: var(--primary); color: white;
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+    font-size: 14px; transition: background 0.2s; white-space: nowrap;
+  }
+  .btn-search:hover { background: var(--primary-dark); }
+  
+  /* Brand grid */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Brand card */
+  .brand-card {
+    background: var(--card-bg); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 24px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+    cursor: default;
+  }
+  .brand-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+  .brand-card .logo-wrap {
+    width: 100px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .brand-card .logo-wrap img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    loading: lazy;
+  }
+  .brand-card .logo-fallback {
+    width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 900; letter-spacing: -1px;
+    border-radius: 8px;
+  }
+  .brand-card .brand-name {
+    font-size: 15px; font-weight: 700; text-align: center;
+  }
+  .btn-download {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 18px; border-radius: 8px; border: none;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    color: white; text-decoration: none; transition: opacity 0.2s;
+  }
+  .btn-download:hover { opacity: 0.88; }
+  
+  /* SKU Results */
+  .results-wrap { margin-top: 20px; }
+  .results-info { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .result-card {
+    background: white; border-radius: 10px; padding: 14px 18px;
+    margin-bottom: 10px; box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--primary);
+  }
+  .result-card .result-table { font-size: 11px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .result-kv { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .result-kv .kv-pair { font-size: 12px; }
+  .result-kv .kv-pair .k { color: var(--muted); }
+  .result-kv .kv-pair .v { font-weight: 600; color: var(--text); }
+  
+  .no-results { text-align: center; padding: 48px; color: var(--muted); font-size: 15px; }
+  .loading { text-align: center; padding: 32px; color: var(--muted); }
+  
+  /* Section headers */
+  .section-title {
+    font-size: 18px; font-weight: 700; color: var(--text);
+    margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+  }
+  .section-title span { font-size: 13px; font-weight: 400; color: var(--muted); }
+  
+  /* Category label */
+  .category-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--muted); margin: 28px 0 12px;
+    padding-bottom: 6px; border-bottom: 2px solid var(--border);
+  }
 </style>
 </head>
 <body>
 
-<nav class="nav">
+<header class="header">
   <div>
-    <div class="nav-name">Paytm POS EMI Offers</div>
-    <div class="nav-sub">Brand Offers Portal · June 2026</div>
+    <h1>Paytm Brand Offers Portal</h1>
+    <p>No-Cost EMI & Instant Cashback Schemes · June 2026 · Confidential</p>
   </div>
-  <span class="nav-badge" id="brandCount">-- Brands</span>
-</nav>
+</header>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-pill">No-Cost EMI &amp; Cashback · June 2026</div>
-    <h1>Find your <span>brand</span><br>and download the offer PDF</h1>
-    <div class="search-wrap">
-      <span class="s-icon">🔍</span>
-      <input class="search-bar" id="q" type="search" placeholder="Search brand…"
-             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-      <button class="clr-btn" id="clrBtn" onclick="clearBrandSearch()">✕</button>
+<div class="container">
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('brands')">📦 Brand PDFs</button>
+    <button class="tab" onclick="switchTab('sku')">🔍 SKU Search</button>
+  </div>
+  
+  <!-- BRANDS SECTION -->
+  <div class="section active" id="tab-brands">
+    <div id="brand-search-wrap" style="margin-bottom:20px;">
+      <input type="text" id="brand-filter" placeholder="Search brands..." 
+        oninput="filterBrands(this.value)"
+        style="width:100%;max-width:400px;padding:10px 14px;border:1.5px solid #E5E7EB;border-radius:8px;font-size:14px;outline:none;">
     </div>
-    <div class="or-div">OR</div>
+    
+    <div id="brand-grid" class="brand-grid"></div>
+  </div>
+  
+  <!-- SKU SEARCH SECTION -->
+  <div class="section" id="tab-sku">
+    <div class="search-bar">
+      <select id="sku-brand">
+        <option value="">Select Brand...</option>
+      </select>
+      <input type="text" id="sku-query" placeholder="Enter SKU / Model ID / Product Name..." 
+        onkeydown="if(event.key==='Enter') searchSKU()">
+      <button class="btn-search" onclick="searchSKU()">Search</button>
+    </div>
+    <div id="sku-results"></div>
   </div>
 </div>
-
-<div class="sku-section">
-  <div class="sku-title">🔎 Search by SKU / Model ID / Product Name</div>
-  <div class="sku-row">
-    <select class="sku-brand-sel" id="skuBrand">
-      <option value="">Brand…</option>
-      <option value="apple">Apple</option>
-      <option value="amstrad">Amstrad</option>
-      <option value="asus">Asus</option>
-      <option value="bluestar">Blue Star</option>
-      <option value="bose">Bose</option>
-      <option value="canon">Canon</option>
-      <option value="croma">Croma</option>
-      <option value="dishtv">DishTV</option>
-      <option value="glen">Glen</option>
-      <option value="godrej">Godrej</option>
-      <option value="haier">Haier</option>
-      <option value="havells">Havells Lloyd</option>
-      <option value="hp">HP</option>
-      <option value="ifb">IFB</option>
-      <option value="itel">Itel</option>
-      <option value="jbl">JBL</option>
-      <option value="nothing">Nothing</option>
-      <option value="oneplus">OnePlus</option>
-      <option value="oppo">OPPO</option>
-      <option value="realme">Realme</option>
-      <option value="reliancereconnect">Reliance Reconnect</option>
-      <option value="samsung mobile">Samsung Mobile</option>
-      <option value="samsung ce">Samsung CE</option>
-      <option value="tcl">TCL</option>
-      <option value="tecno">Tecno</option>
-      <option value="vijaysales">Vijay Sales</option>
-      <option value="vivo">Vivo</option>
-      <option value="whirlpool">Whirlpool</option>
-      <option value="xiaomi">Xiaomi</option>
-    </select>
-    <div class="sku-input-wrap">
-      <input class="sku-input" id="skuQ" type="search"
-             placeholder="Enter SKU or Model ID…"
-             autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-             oninput="document.getElementById('skuClear').style.display=this.value?'block':'none'"
-             style="width:100%;padding-right:30px">
-      <button class="sku-clear" id="skuClear" onclick="clearSkuInput()">✕</button>
-    </div>
-    <button class="sku-btn" onclick="skuSearch()">Search</button>
-  </div>
-  <div class="sku-hint-row">
-    <span class="sku-hint">Select a brand &amp; enter SKU / Model ID, then tap Search.</span>
-    <button class="info-btn" onclick="toggleInfo()" aria-label="How to search">ⓘ</button>
-  </div>
-  <div class="info-box" id="infoBox">
-    <button class="info-close" onclick="toggleInfo()">✕</button>
-    <p><b>How to search:</b></p>
-    <ul>
-      <li>Select a <b>brand</b> from the dropdown</li>
-      <li>Type a <b>SKU / Model ID / Product Name</b> in the text box</li>
-      <li>Tap <b>Search</b> — results appear below</li>
-      <li>Tap <b>✕</b> in the search box to clear and search again</li>
-      <li>To find a brand PDF, use the <b>brand search bar</b> above</li>
-    </ul>
-  </div>
-</div>
-<div class="sku-results" id="skuResults"></div>
-
-<main class="main">
-  <div class="result-label" id="label">All Brands — June 2026</div>
-  <div class="empty" id="empty">
-    <div class="empty-icon">🔍</div>
-    <h3>No brand found</h3>
-    <p>Try "Samsung", "Vivo", "Apple" or "Whirlpool"</p>
-  </div>
-  <div class="grid" id="grid"></div>
-</main>
-
-<footer>
-  <strong>Paytm POS EMI Offers</strong> &nbsp;·&nbsp; Brand Offers Portal<br>
-  June 2026 &nbsp;·&nbsp; Confidential — For Internal Use Only
-</footer>
 
 <script>
-const BASE = 'https://paytm-ppsl-merchant.github.io/paytm-brand-offers';
+// ===================== BRAND DATA =====================
+const BASE_URL = 'https://paytm-ppsl-merchant.github.io/paytm-brand-offers';
 
 const BRANDS = [
-  {name:'OnePlus',           file:'OnePlus_Jun2026_NoCostEMIOffers.pdf',            color:'#e53e3e', logo:'logos/oneplus.png'},
-  {name:'Apple',             file:'Apple_Jun2026_NoCostEMIOffers.pdf',              color:'#000000', logo:'logos/apple.png'},
-  {name:'Samsung Mobile',    file:'Samsung_Mobile_Jun2026_NoCostEMIOffers.pdf',     color:'#1428A0', logo:'logos/samsung.png'},
-  {name:'Samsung CE',        file:'Samsung_CE_Jun2026_NoCostEMIOffers.pdf',         color:'#1428A0', logo:'logos/samsung.png'},
-  {name:'Xiaomi',            file:'Xiaomi_Jun2026_NoCostEMIOffers.pdf',             color:'#ff6900', logo:'logos/xiaomi.png'},
-  {name:'OPPO',              file:'OPPO_Jun2026_NoCostEMIOffers.pdf',               color:'#1F8F6B', logo:'logos/oppo.png'},
-  {name:'Vivo',              file:'Vivo_Jun2026_NoCostEMIOffers.pdf',               color:'#415FFF', logo:'logos/vivo.png'},
-  {name:'Realme',            file:'Realme_Jun2026_NoCostEMIOffers.pdf',             color:'#d97706', logo:'logos/realme.png'},
-  {name:'HP',                file:'HP_Jun2026_NoCostEMIOffers.pdf',                 color:'#0096D6', logo:'logos/hp.png'},
-  {name:'Haier',             file:'Haier_Jun2026_NoCostEMIOffers.pdf',              color:'#003DA5', logo:'logos/haier.png'},
-  {name:'IFB',               file:'IFB_Jun2026_NoCostEMIOffers.pdf',               color:'#002970', logo:'logos/ifb.png'},
-  {name:'Godrej',            file:'Godrej_Jun2026_NoCostEMIOffers.pdf',             color:'#6B2D90', logo:'logos/godrej.png'},
-  {name:'Blue Star',         file:'BlueStar_Jun2026_NoCostEMIOffers.pdf',           color:'#0078D4', logo:'logos/bluestar.png'},
-  {name:'Whirlpool',         file:'Whirlpool_Jun2026_NoCostEMIOffers.pdf',          color:'#003087', logo:'logos/whirlpool.png'},
-  {name:'Asus',              file:'Asus_Jun2026_NoCostEMIOffers.pdf',               color:'#00539C', logo:'logos/asus.png'},
-  {name:'Havells Lloyd',     file:'Havells_Jun2026_NoCostEMIOffers.pdf',            color:'#1B3A6B', logo:'logos/havellslloyd.png'},
-  {name:'TCL',               file:'TCL_Jun2026_NoCostEMIOffers.pdf',               color:'#E53935', logo:'logos/tcl.png'},
-  {name:'JBL',               file:'JBL_Jun2026_NoCostEMIOffers.pdf',               color:'#E35205', logo:'logos/jbl.png'},
-  {name:'Bose',              file:'Bose_Jun2026_NoCostEMIOffers.pdf',               color:'#222222', logo:'logos/bose.png'},
-  {name:'Canon',             file:'Canon_Jun2026_NoCostEMIOffers.pdf',              color:'#CC0000', logo:'logos/canon.png'},
-  {name:'Vijay Sales',       file:'Vijay_Sales_Jun2026_NoCostEMIOffers.pdf',        color:'#E53935', logo:'logos/vijaysales.png'},
-  {name:'Croma',             file:'Croma_Jun2026_NoCostEMIOffers.pdf',              color:'#009B8C', logo:'logos/croma.png'},
-  {name:'Glen',              file:'Glen_Jun2026_NoCostEMIOffers.pdf',               color:'#0066B3', logo:'logos/glen.png'},
-  {name:'Tecno',             file:'Tecno_Jun2026_NoCostEMIOffers.pdf',              color:'#0066FF', logo:'logos/tecno.png'},
-  {name:'Nothing',           file:'Nothing_Jun2026_NoCostEMIOffers.pdf',            color:'#111111', logo:'logos/nothing.png'},
-  {name:'Amstrad',           file:'Amstrad_Jun2026_NoCostEMIOffers.pdf',            color:'#1C2951', logo:'logos/amstrad.png'},
-  {name:'DishTV',            file:'DishTV_Jun2026_NoCostEMIOffers.pdf',             color:'#F26522', logo:'logos/dishtv.png'},
-  {name:'Reliance Reconnect',file:'Reliance_Reconnect_Jun2026_NoCostEMIOffers.pdf', color:'#CC0000', logo:'logos/reliancereconnect.png'},
-  {name:'Itel',              file:'Itel_Jun2026_NoCostEMIOffers.pdf',               color:'#333333', logo:'logos/itel.png'},
+  // === PREVIOUS BRANDS ===
+  {
+    key: 'Acer', name: 'Acer', color: '#83B81A', textColor: '#fff',
+    logo: 'logos/acer.png',
+    pdf: 'Acer_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Computers & Laptops'
+  },
+  {
+    key: 'Apple', name: 'Apple', color: '#555555', textColor: '#fff',
+    logo: null,
+    pdf: 'Apple_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'BlueStar', name: 'Blue Star', color: '#003087', textColor: '#fff',
+    logo: 'logos/bluestar.png',
+    pdf: 'BlueStar_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Daikin', name: 'Daikin', color: '#00A0E0', textColor: '#fff',
+    logo: 'logos/daikin.png',
+    pdf: 'Daikin_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Godrej', name: 'Godrej', color: '#E31837', textColor: '#fff',
+    logo: 'logos/godrej.png',
+    pdf: 'Godrej_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'Haier', name: 'Haier', color: '#0072BC', textColor: '#fff',
+    logo: 'logos/haier.png',
+    pdf: 'Haier_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'HP', name: 'HP', color: '#0096D6', textColor: '#fff',
+    logo: 'logos/hp.png',
+    pdf: 'HP_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Computers & Laptops'
+  },
+  {
+    key: 'IFB', name: 'IFB', color: '#E31837', textColor: '#fff',
+    logo: 'logos/ifb.png',
+    pdf: 'IFB_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'Lenovo', name: 'Lenovo', color: '#E2231A', textColor: '#fff',
+    logo: 'logos/lenovo.png',
+    pdf: 'Lenovo_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Computers & Laptops'
+  },
+  {
+    key: 'LG', name: 'LG', color: '#A50034', textColor: '#fff',
+    logo: 'logos/lg.png',
+    pdf: 'LG_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'OnePlus', name: 'OnePlus', color: '#EB0028', textColor: '#fff',
+    logo: 'logos/oneplus.png',
+    pdf: 'OnePlus_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'OPPO', name: 'OPPO', color: '#1D8348', textColor: '#fff',
+    logo: 'logos/oppo.png',
+    pdf: 'OPPO_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'Panasonic', name: 'Panasonic', color: '#0042AB', textColor: '#fff',
+    logo: 'logos/panasonic.png',
+    pdf: 'Panasonic_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Realme', name: 'Realme', color: '#F5A623', textColor: '#fff',
+    logo: 'logos/realme.png',
+    pdf: 'Realme_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'Samsung_Mobile', name: 'Samsung Mobile', color: '#1428A0', textColor: '#fff',
+    logo: 'logos/samsung.png',
+    pdf: 'Samsung_Mobile_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'Samsung_CE', name: 'Samsung CE', color: '#1428A0', textColor: '#fff',
+    logo: 'logos/samsung.png',
+    pdf: 'Samsung_CE_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'Vivo', name: 'Vivo', color: '#415FFF', textColor: '#fff',
+    logo: 'logos/vivo.png',
+    pdf: 'Vivo_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  {
+    key: 'Xiaomi', name: 'Xiaomi', color: '#FF6900', textColor: '#fff',
+    logo: 'logos/xiaomi.png',
+    pdf: 'Xiaomi_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
+  // === NEW BRANDS ===
+  {
+    key: 'Bosch', name: 'Bosch', color: '#E20015', textColor: '#fff',
+    logo: 'logos/Bosch.png',
+    pdf: 'Bosch_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'Voltas', name: 'Voltas', color: '#003DA5', textColor: '#fff',
+    logo: 'logos/Voltas.png',
+    pdf: 'Voltas_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Voltas_Beko', name: 'Voltas Beko', color: '#003DA5', textColor: '#fff',
+    logo: 'logos/Voltas.png',
+    pdf: 'Voltas_Beko_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Home Appliances'
+  },
+  {
+    key: 'Carrier', name: 'Carrier', color: '#1C2C7A', textColor: '#fff',
+    logo: 'logos/Carrier.png',
+    pdf: 'Carrier_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Midea_Toshiba', name: 'Midea Toshiba', color: '#0066CC', textColor: '#fff',
+    logo: 'logos/Midea_Toshiba.jpeg',
+    pdf: 'Midea_Toshiba_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Air Conditioners'
+  },
+  {
+    key: 'Sony', name: 'Sony', color: '#333333', textColor: '#fff',
+    logo: 'logos/Sony.png',
+    pdf: 'Sony_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Electronics'
+  },
+  {
+    key: 'Motorola', name: 'Motorola', color: '#5C2D91', textColor: '#fff',
+    logo: null,
+    pdf: 'Motorola_Jun2026_NoCostEMIOffers.pdf',
+    category: 'Mobiles & Tablets'
+  },
 ];
 
-const SEARCH_FILES = {
-  'apple':             'apple_search.json',
-  'amstrad':           'amstrad_search.json',
-  'asus':              'asus_search.json',
-  'bluestar':          'bluestar_search.json',
-  'bose':              'bose_search.json',
-  'canon':             'canon_search.json',
-  'croma':             'croma_search.json',
-  'dishtv':            'dishtv_search.json',
-  'glen':              'glen_search.json',
-  'godrej':            'godrej_search.json',
-  'haier':             'haier_search.json',
-  'havells':           'havells_search.json',
-  'hp':                'hp_search.json',
-  'ifb':               'ifb_search.json',
-  'itel':              'itel_search.json',
-  'jbl':               'jbl_search.json',
-  'nothing':           'nothing_search.json',
-  'oneplus':           'oneplus_search.json',
-  'oppo':              'oppo_search.json',
-  'realme':            'realme_search.json',
-  'reliancereconnect': 'reliancereconnect_search.json',
-  'samsung mobile':    'samsung_mobile_search.json',
-  'samsung ce':        'samsung_ce_search.json',
-  'tcl':               'tcl_search.json',
-  'tecno':             'tecno_search.json',
-  'vijaysales':        'vijaysales_search.json',
-  'vivo':              'vivo_search.json',
-  'whirlpool':         'whirlpool_search.json',
-  'xiaomi':            'xiaomi_search.json',
-};
-
-const searchCache = {};
-
-// Update badge
-document.getElementById('brandCount').textContent = BRANDS.length + ' Brands';
-
-const grid=document.getElementById('grid'),inp=document.getElementById('q');
-const clrBtn=document.getElementById('clrBtn'),lbl=document.getElementById('label');
-const empty=document.getElementById('empty'),skuResults=document.getElementById('skuResults');
-
-function card(b) {
-  const logo = b.logo
-    ? `<div class="card-logo"><img src="${BASE}/${b.logo}" alt="${b.name}" loading="lazy" onerror="this.parentNode.style.display='none'"></div>`
-    : '';
-  return `<div class="card">${logo}
-    <div class="card-name" style="color:${b.color}">${b.name}</div>
-    <a class="btn" href="${BASE}/${b.file}" target="_blank" rel="noopener">⬇&nbsp;Download PDF</a>
-  </div>`;
-}
-function render(list){grid.innerHTML=list.map(card).join('');}
-render(BRANDS);
-
-inp.addEventListener('input',function(){
-  const q=this.value.trim().toLowerCase();
-  clrBtn.style.display=q?'block':'none';
-  if(!q){lbl.textContent='All Brands — June 2026';empty.style.display='none';render(BRANDS);return;}
-  const hit=BRANDS.filter(b=>b.name.toLowerCase().includes(q));
-  if(!hit.length){grid.innerHTML='';empty.style.display='block';
-    lbl.textContent=`No results for "${this.value.trim()}"`;
-  }else{empty.style.display='none';
-    lbl.textContent=`${hit.length} brand${hit.length>1?'s':''} found`;render(hit);}
-});
-function clearBrandSearch(){
-  inp.value='';clrBtn.style.display='none';empty.style.display='none';
-  lbl.textContent='All Brands — June 2026';render(BRANDS);}
-
-async function skuSearch(){
-  const brand=document.getElementById('skuBrand').value.trim().toLowerCase();
-  const q=document.getElementById('skuQ').value.trim().toLowerCase();
-  if(!brand){showSkuStatus('Please select a brand first.','');return;}
-  if(!q){showSkuStatus('Please enter a SKU or Model ID.','');return;}
-  if(!SEARCH_FILES[brand]){showSkuStatus('SKU search not available for this brand yet.','notfound');return;}
-  showSkuStatus('Loading offer data…','');
-  if(!searchCache[brand]){
-    try{
-      const res=await fetch(`${BASE}/${SEARCH_FILES[brand]}`);
-      if(!res.ok)throw new Error();
-      searchCache[brand]=await res.json();
-    }catch{showSkuStatus('Failed to load data. Check connection and retry.','notfound');return;}
+// ===================== RENDER BRANDS =====================
+function renderBrands(filter = '') {
+  const grid = document.getElementById('brand-grid');
+  const lf = filter.toLowerCase();
+  
+  // Group by category
+  const cats = {};
+  BRANDS.forEach(b => {
+    if (lf && !b.name.toLowerCase().includes(lf)) return;
+    if (!cats[b.category]) cats[b.category] = [];
+    cats[b.category].push(b);
+  });
+  
+  let html = '';
+  for (const [cat, brands] of Object.entries(cats)) {
+    html += `<div class="category-label" style="grid-column:1/-1">${cat}</div>`;
+    brands.sort((a,b)=>a.name.localeCompare(b.name)).forEach(b => {
+      const logoHtml = b.logo
+        ? `<img src="${BASE_URL}/${b.logo}" alt="${b.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+        : '';
+      const fallbackStyle = b.logo ? 'style="display:none"' : '';
+      html += `
+        <div class="brand-card" style="border-color:${b.color}20">
+          <div class="logo-wrap">
+            ${logoHtml}
+            <div class="logo-fallback" ${fallbackStyle} style="background:${b.color}15;color:${b.color}">
+              ${b.name.slice(0,2).toUpperCase()}
+            </div>
+          </div>
+          <div class="brand-name" style="color:${b.color}">${b.name}</div>
+          <a class="btn-download" style="background:${b.color}" 
+            href="${BASE_URL}/${b.pdf}" target="_blank" download>
+            ⬇ Download PDF
+          </a>
+        </div>`;
+    });
   }
-  const db=searchCache[brand];
-  const matches=db.rows.filter(row=>row.s.some(s=>s.toLowerCase().includes(q)));
-  if(!matches.length){showSkuStatus(`No results for "${document.getElementById('skuQ').value.trim()}"`, 'notfound');return;}
-  showSkuStatus(`${matches.length} result${matches.length>1?'s':''} found for "${document.getElementById('skuQ').value.trim()}"`, 'found');
-  const brandName=brand.split(' ').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
-  const cards=matches.map(row=>{
-    const hdrs=db.tables[row.t]||[];
-    const trows=hdrs.map((h,i)=>{
-      const v=(row.v[i]||'').toString().trim();
-      return v?`<tr><td>${esc(h)}</td><td>${esc(v)}</td></tr>`:'';
-    }).filter(Boolean).join('');
-    return `<div class="result-card">
-      <div class="result-card-hdr">
-        <span class="result-card-brand">${brandName}</span>
-        <span class="result-card-table">· ${row.t}</span>
-      </div>
-      <table class="result-tbl">${trows}</table>
-    </div>`;
-  }).join('');
-  skuResults.innerHTML=skuResults.querySelector('.sku-status').outerHTML+cards;
+  
+  if (!html) {
+    html = '<div class="no-results" style="grid-column:1/-1">No brands match your search.</div>';
+  }
+  
+  grid.innerHTML = html;
 }
-function showSkuStatus(msg,cls){skuResults.innerHTML=`<div class="sku-status ${cls}">${msg}</div>`;}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function toggleInfo(){const b=document.getElementById('infoBox');b.style.display=b.style.display==='block'?'none':'block';}
-function clearSkuInput(){const i=document.getElementById('skuQ');i.value='';document.getElementById('skuClear').style.display='none';skuResults.innerHTML='';i.focus();}
-document.getElementById('skuQ').addEventListener('keydown',e=>{if(e.key==='Enter')skuSearch();});
+
+function filterBrands(val) {
+  renderBrands(val);
+}
+
+// ===================== SKU SEARCH =====================
+const skuSelect = document.getElementById('sku-brand');
+// Populate brand dropdown - only brands with searchable JSON
+BRANDS.forEach(b => {
+  const opt = document.createElement('option');
+  opt.value = b.key;
+  opt.textContent = b.name;
+  skuSelect.appendChild(opt);
+});
+
+const jsonCache = {};
+
+async function loadBrandJSON(brandKey) {
+  if (jsonCache[brandKey]) return jsonCache[brandKey];
+  const url = `${BASE_URL}/${brandKey}_search.json`;
+  document.getElementById('sku-results').innerHTML = '<div class="loading">Loading data...</div>';
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) throw new Error('Not found');
+    const data = await resp.json();
+    jsonCache[brandKey] = data;
+    return data;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function searchSKU() {
+  const brandKey = document.getElementById('sku-brand').value;
+  const query = document.getElementById('sku-query').value.trim().toLowerCase();
+  const resultsDiv = document.getElementById('sku-results');
+  
+  if (!brandKey) {
+    resultsDiv.innerHTML = '<div class="no-results">Please select a brand first.</div>';
+    return;
+  }
+  if (!query) {
+    resultsDiv.innerHTML = '<div class="no-results">Please enter a search term.</div>';
+    return;
+  }
+  
+  const data = await loadBrandJSON(brandKey);
+  if (!data) {
+    resultsDiv.innerHTML = '<div class="no-results">Could not load data for this brand.</div>';
+    return;
+  }
+  
+  const terms = query.split(/\s+/).filter(Boolean);
+  const matches = data.rows.filter(row => {
+    const s = row.s.toLowerCase();
+    return terms.every(t => s.includes(t));
+  });
+  
+  if (!matches.length) {
+    resultsDiv.innerHTML = `<div class="no-results">No results found for "<strong>${query}</strong>"</div>`;
+    return;
+  }
+  
+  // Show up to 200 results
+  const show = matches.slice(0, 200);
+  let html = `<div class="results-info">Found <strong>${matches.length}</strong> result${matches.length!==1?'s':''}${matches.length>200?' (showing first 200)':''}</div>`;
+  
+  show.forEach(row => {
+    const headers = data.tables[row.t] || [];
+    const kvPairs = headers.map((h, i) => {
+      const v = row.v[i] || '';
+      return v ? `<div class="kv-pair"><span class="k">${escHtml(h)}: </span><span class="v">${escHtml(v)}</span></div>` : '';
+    }).join('');
+    html += `
+      <div class="result-card">
+        <div class="result-table">${escHtml(row.t)}</div>
+        <div class="result-kv">${kvPairs}</div>
+      </div>`;
+  });
+  
+  resultsDiv.innerHTML = html;
+}
+
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ===================== TABS =====================
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['brands','sku'][i]===tab));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(`tab-${tab}`).classList.add('active');
+}
+
+// Init
+renderBrands();
 </script>
 </body>
 </html>
